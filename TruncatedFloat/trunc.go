@@ -21,13 +21,13 @@ func main() {
 
 	// i, _ := strconv.Atoi("10")
 	// y := i * 2
-	// fmt.Println(y)
+	// fmt.Println(y) // prints 20
 
-	var x int
-	var y *int
-	z := 3
-	y = &z
-	x = &y
-	fmt.Println(x)
+	// var x int
+	// var y *int
+	// z := 3
+	// y = &z
+	// x = &y  				fils to compile 
+	// fmt.Println(x)
 
 }
