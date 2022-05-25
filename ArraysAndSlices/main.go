@@ -24,4 +24,13 @@ func main() {
 	// 	fmt.Printf("index %d, val %d", i, v)
 	// }
 
+	//create slice
+	lettersArray := [3] string {"yousef", "aly", "mohammed"}
+	lettersArray2 := [...] string {"yousef", "aly", "mohammed"}
+	lettersSlice := []string {"yousef", "aly", "mohammed"}
+
+	fmt.Println(lettersArray[0])
+	fmt.Println(lettersArray2[1])
+	fmt.Println(lettersSlice[2])
+
 }
