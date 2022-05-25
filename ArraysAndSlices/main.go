@@ -39,4 +39,13 @@ func main() {
 	s[0] = 250
 	fmt.Println(s[0])
 
+	//create slice with default capacity to length when capacity is ommited
+
+	sliceDefaultCap := make([]int, 5, 100)
+	sliceDefaultCap[4] = 100
+	// sliceDefaultCap[10] = 111 		//this line is invalid
+
+	fmt.Println(sliceDefaultCap[4])
+	// fmt.Println(sliceDefaultCap[10]) //invalid
+
 }
