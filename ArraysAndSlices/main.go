@@ -25,12 +25,18 @@ func main() {
 	// }
 
 	//create slice
-	lettersArray := [3] string {"yousef", "aly", "mohammed"}
-	lettersArray2 := [...] string {"yousef", "aly", "mohammed"}
-	lettersSlice := []string {"yousef", "aly", "mohammed"}
+	lettersArray := [3]string{"yousef", "aly", "mohammed"}
+	lettersArray2 := [...]string{"yousef", "aly", "mohammed"}
+	lettersSlice := []string{"yousef", "aly", "mohammed"}
 
 	fmt.Println(lettersArray[0])
 	fmt.Println(lettersArray2[1])
 	fmt.Println(lettersSlice[2])
+
+	//create slice with make()
+
+	s := make([]byte, 5, 10)
+	s[0] = 250
+	fmt.Println(s[0])
 
 }
