@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	fmt.Println("Hello there")
 
-	// C# array  =>    arr int[]    Golang array  =>   arr []int
+	// C# array  =>    arr int[]    Golang array  =>   arr [5]int  Golang Slice =>  s []int
 
 	//declare array
 	var arr [5]int
@@ -37,7 +37,7 @@ func main() {
 
 	//create slice with make()
 
-	s := make([]byte, 5, 10)
+	s := make([]byte, 5)
 	s[0] = 250
 	fmt.Println(s[0])
 
@@ -57,5 +57,42 @@ func main() {
 	sliceXArray := x[:2]
 	fmt.Println("value of sliceXArray[1]")
 	fmt.Println(sliceXArray[1])
+
+	//Modify a slice modify the original slice
+
+	d := []string{"a", "b", "c", "d"}
+	e := d[2:]
+	e[1] = "z"
+	fmt.Println(d[3])
+
+	fmt.Println("s cap and length = ")
+	fmt.Println(cap(s))
+	fmt.Println(len(s))
+	s = s[2:4]
+	fmt.Println("after first slice s cap and length = ")
+	fmt.Println(cap(s))
+	fmt.Println(len(s))
+
+	//expand slice length
+	//grow s length
+	s = s[:cap(s)]
+	fmt.Println("s cap and length after grow= ")
+	fmt.Println(len(s))
+	fmt.Println(cap(s))
+
+	//double the capacity of a slice
+
+	t := make([]byte, len(s), (cap(s)*2)+1)
+	fmt.Println("t len & cap")
+	fmt.Println(len(t))
+	fmt.Println(cap(t))
+
+	for i := range s {
+		t[i] = s[i]
+	}
+
+	s = t
+	fmt.Println("s capacity after double")
+	fmt.Println(cap(t))
 
 }
