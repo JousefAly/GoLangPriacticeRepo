@@ -5,6 +5,8 @@ import "fmt"
 func main() {
 	fmt.Println("Hello there")
 
+	// C# array  =>    arr int[]    Golang array  =>   arr []int
+
 	//declare array
 	var arr [5]int
 
@@ -47,5 +49,13 @@ func main() {
 
 	fmt.Println(sliceDefaultCap[4])
 	// fmt.Println(sliceDefaultCap[10]) //invalid
+
+	//Slicing
+	//example create a slice of an array "slicing an array"
+
+	x := [3]string{"Abdo", "Aly", "Mohammed"}
+	sliceXArray := x[:2]
+	fmt.Println("value of sliceXArray[1]")
+	fmt.Println(sliceXArray[1])
 
 }
