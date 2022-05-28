@@ -22,7 +22,14 @@ func main() {
 	fmt.Println()
 	fmt.Print("z after passing to function = ")
 	fmt.Print(z)
+	fmt.Println()
 
+	arr := [3]int{1, 2, 3}
+	incrementFirstElement(&arr)
+	fmt.Println(arr[0])
+	slc := []int{10, 20, 30}
+	incrementFirstSliceElement(slc)
+	fmt.Println(slc)
 }
 
 //create a function
@@ -67,4 +74,18 @@ func numWithDouble(n int) (int, int) {
 
 func passByRef(y *int) {
 	*y = *y + 1
+}
+
+//pass array pointer
+// but this is not the right way to do in Go use slice instead !!
+func incrementFirstElement(a *[3]int) {
+	(*a)[0] = (*a)[0] + 1
+}
+
+// we can almost use a slice instead of an array because
+// when we daclare a slice it will create its backend array
+
+//function that increments the first slice element
+func incrementFirstSliceElement(s []int) {
+	s[0] += 1
 }
