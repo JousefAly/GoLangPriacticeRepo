@@ -6,14 +6,20 @@ import "fmt"
 type MyInt int
 
 //create a method that return the double of that type
+// in this method mi is called "receiver Type"
 
 func (mi MyInt) Double() int {
+
 	return int(mi * 2)
 }
 
 func main() {
 	fmt.Println("Hello World paracticing classes")
-	var x MyInt = 50
+	// var x MyInt = 50
+	x := MyInt(50)
+
+	//x is passed implecitly to Double()
+	//it is passed as call by value()
 	fmt.Println(x.Double())
 }
 
