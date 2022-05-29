@@ -89,3 +89,42 @@ func incrementFirstElement(a *[3]int) {
 func incrementFirstSliceElement(s []int) {
 	s[0] += 1
 }
+
+/*
+	we can measure the function complexity by many ways for ex:
+
+	1. function Length how many code lines in the function.
+	2. control flow complexity.
+		we can reduce the overall complexity if the function has many conditional paths
+		by making "partitioning conditionals" for ex assume we have the following function
+		that has many conditional paths instead of having four possible paths we can seperate
+		conditional path into a function so each function will have 2 possible paths
+
+		func foo(a,b int){
+			if a ==b {
+
+				if b== c{
+
+				}
+			}
+		}
+
+		//instead we seperate the checking into a function like the following
+
+		//2 conditional paths
+		func foo(a,b int){
+			if a == b{
+
+				CheckB()
+			}
+		}
+
+		// also here 2 conditional paths
+		func CheckB (b int){
+
+			if b == c {
+
+			}
+		}
+
+*/
