@@ -38,5 +38,18 @@ func main() {
 	as a general rule to associate a type with a method , both of them need to be defined
 	in the same package
 
+	to compose many data fields in Go :
+	we use structs ex :
+
+	so instead of :
+	type MyInt int
+
+	we make this :
+
+	type Point struct{
+		x float64
+		y float64
+	}
+
 
 */
