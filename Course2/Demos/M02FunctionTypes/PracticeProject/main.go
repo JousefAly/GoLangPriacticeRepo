@@ -15,6 +15,21 @@ func applyFuncToIntVal(xFunc func(int) int,
 	return xFunc(val)
 }
 
+//example of a function that take variable number of arguments
+// note that the "..." or "ellipsis" are treated as a slice inside the function
+// also called as a variadic function means (it take a var number of arguments)
+func getMax(vals ...int) int {
+	max := -1
+
+	for _, v := range vals {
+		if v > max {
+			max = v
+		}
+
+	}
+	return max
+}
+
 func main() {
 	fmt.Println("Hello World!")
 
@@ -39,6 +54,15 @@ func main() {
 	value := applyFuncToIntVal(func(x int) int { return x + 2 }, x)
 	fmt.Println(value)
 
+	//calling a function that take a variable number of arguments
+	fmt.Println("Max of function variable arguments")
+	fmt.Println(getMax(1, 2, 3, 55, 53234, 22))
+
+	// we can pass a slice as well to the variadic function ex:
+
+	vSlice := []int{50, 60, 70, 2, 4444, 222, 5, 5353535, 22, 23, 455555555}
+	fmt.Println(getMax(vSlice...))
+
 }
 
 /*
@@ -52,6 +76,28 @@ func main() {
 
 	I think it is some how looke like delegates in C# when we assign a function to a var of Type function.
 	Again Nicely done Golang!!!
+
+	--------------------------------------------------------------------------------------------------
+	Colsure is => a Function + Functions's Enviroment
+	--------------------------------------------------------------------------------------------------
+	==============================> Variable number of arguments <====================================
+	we can define that we need a variable number of arguments using :
+	(ellipsis => "..."  (three dots in a row))
+	--------------------------------------------------------------------------------------------------
+
+	Arguments of deferred calls are evaluated immediately ex:
+
+	i := 1
+	defer  fmt.Println(i + 1) // this prints 2 not 3
+	i++
+	fmt.Println("hello")
+
+	output:
+
+	hello
+	2
+
+
 
 
 
