@@ -32,11 +32,16 @@ func (p *Point) InitMe(xn, yn float64) {
 	why ? because referencing is happening automatically as well like dereferencing
 	// thanks Golang
 
-	Using Point Receivers
+	Using Pointer Receivers
 	it is a good practice to make all methods of a type  to have pointer reciever OR
 	make all methods with non-pointer recievers because it is easy to get confused when some are using pointer receivers
 	and some are not.
 
+
+*/
+
+/*
+	Golang Does not have inheritance. Golang doesn't have inheritance
 
 */
 func (e *Employee) InitMe(name string, salary float64) {
