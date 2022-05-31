@@ -27,7 +27,16 @@ func (p *Point) InitMe(xn, yn float64) {
 	why not using dereferencing to modify the actual value ex : *e.name = name  or *e.salary = salary ?
 	because Golang compilere make it "Automatically". so no need to do this.
 	in general: Dereferencing is automatic with . operator.
+	also no need for reference when call the mehtod func (e *Employee) InitMe(name string, salary float64){}
+	no need to pass the address to the pointer by making &emp.InitMe(...) just make it emp.InitMe().
+	why ? because referencing is happening automatically as well like dereferencing
 	// thanks Golang
+
+	Using Point Receivers
+	it is a good practice to make all methods of a type  to have pointer reciever OR
+	make all methods with non-pointer recievers because it is easy to get confused when some are using pointer receivers
+	and some are not.
+
 
 */
 func (e *Employee) InitMe(name string, salary float64) {
@@ -51,4 +60,13 @@ func main() {
 	fmt.Println("Hello " + employee.name)
 	fmt.Println("Your slary is: ", employee.salary)
 	fmt.Println("Your slary is: (other float format)" + strconv.FormatFloat(employee.salary, 'E', -1, 64))
+
+	e := Employee{"Abdelrahman", 5000}
+	fmt.Println("Hello " + e.name)
+	fmt.Println("Your slary is: ", e.salary)
+
+	e.InitMe("abdo 2", 6000)
+	fmt.Println("Hello " + e.name)
+	fmt.Println("Your slary is: ", e.salary)
+
 }
