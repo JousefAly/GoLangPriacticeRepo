@@ -23,3 +23,4 @@ func main() {
 	fmt.Println(point.x)
 	fmt.Println(point.y)
 }
+
