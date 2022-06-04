@@ -2,6 +2,34 @@ package main
 
 import "fmt"
 
+type Shape2D interface {
+	Area() float64
+	Perimiter() float64
+}
+
+type Rectangle struct {
+	base   float64
+	height float64
+}
+
+func (r Rectangle) Area() float64 {
+	return r.base * r.height
+}
+
+func (r Rectangle) Perimiter() float64 {
+	return (r.base * r.height) * 2
+}
+func (r *Rectangle) InitRectangle(base, height float64) {
+	r.base = base
+	r.height = height
+}
+
+func FitInYard(s Shape2D) bool {
+	if s.Area() > 100 && s.Perimiter() > 100 {
+		return true
+	}
+	return false
+}
 func main() {
 	fmt.Println("Hello world!")
 	//Golang doesn't have inheritance
@@ -33,8 +61,9 @@ func main() {
 		so dynamic type is Dog
 		and dynamic value is d
 
-
-
-
 	*/
+	var rectangle Rectangle
+	rectangle.InitRectangle(500, 600)
+	fmt.Println("Fit in yard ?")
+	fmt.Println(FitInYard(rectangle))
 }
