@@ -61,6 +61,12 @@ func main() {
 		so dynamic type is Dog
 		and dynamic value is d
 
+		Type assertions are used to disambiguate between different types used by an interfase
+		for example if we have : var s Shape2D
+		then we can make   type := s.(type) to know the type
+		and there is a switch that will be a good solution if we have many types that implement the interface
+
+
 	*/
 	var rectangle Rectangle
 	rectangle.InitRectangle(500, 600)
